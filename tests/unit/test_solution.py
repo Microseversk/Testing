@@ -10,7 +10,7 @@ class TestSolution(TestCase):
         self.sol = Solution()
 
     def test_palindromic_substrings_count__correct_result(self):
-        data = [['abc', 3], ['aaa', 6]]
+        data = [['abc', 3], ['aaa', 6], ['aaabccc',13],['asdasd',6],['ytreeeeqweeeeerrreee',45]]
         for s in data:
             with self.subTest(string=s[0], right_count=s[1]):
                 self.assertEqual(self.sol.countSubstrings(s[0]), s[1])
@@ -50,19 +50,19 @@ class TestSolution(TestCase):
                 self.assertRaises(AssertionError, self.sol.countSubstrings, data[s])
 
     def test_palindromic_substrings_count__input_string_type_invalid(self):
-        cases = [
+        data = [
             123,
             12.3,
             ['a', 'b', 'c'],
             {'a': 1, 'b': 2},
             None
         ]
-        for s in cases:
+        for s in data:
             with self.subTest(input_string_type=type(s)):
                 self.assertRaises(TypeError, self.sol.countSubstrings, s)
 
     def test_palindromic_substrings_count__input_string_value_invalid(self):
-        cases = [
+        data = [
             '123',
             "123abc123",
             "abc123abc",
@@ -84,9 +84,11 @@ class TestSolution(TestCase):
             "!@#abc!@#",
             "abc!@#abc"
         ]
-        for s in cases:
+        for s in data:
             with self.subTest(incorrect_input_value=s):
                 self.assertRaises(AssertionError, self.sol.countSubstrings, s)
+
+
 
 if __name__ == '__main__':
     unittest.main()

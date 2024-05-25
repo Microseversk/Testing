@@ -25,3 +25,4 @@ class Solution:
         if not(type(s) is str): raise TypeError(f"Incorrect input string type:${type(s)} expected ${type("")}")
         if not(re.fullmatch(r'^[a-z]+$',s)): raise AssertionError('Input string must contain only lowercases en letters')
         if not(len(s) > 0 and len(s) <= 1000): raise AssertionError('Input string length must be between 0 and 1001')
+
