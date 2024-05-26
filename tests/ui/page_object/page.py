@@ -8,8 +8,8 @@ class BasePage(object):
 
 
 class RootPage(BasePage):
-    def is_title_matches(self):
-        return 'Palindromic substrings' == self.driver.title
+    def is_title_matches(self, title):
+        return title == self.driver.title
     def fill_data_in_input1(self,data):
         element = self.driver.find_element(*RootPageLocators.INPUT1)
         element.send_keys(data)
