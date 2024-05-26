@@ -82,7 +82,19 @@ class TestSolution(TestCase):
             "abc abc",
             "@#!",
             "!@#abc!@#",
-            "abc!@#abc"
+            "abc!@#abc",
+            "()",
+            "[]",
+            "{}",
+            "<>",
+            "()abc()",
+            "[]abc[]",
+            "{}abc{}}",
+            "<>abc<>",
+            "abc()abc",
+            "abc[]abc",
+            "abc{}abc",
+            "abc<>abc"
         ]
         for s in data:
             with self.subTest(incorrect_input_value=s):

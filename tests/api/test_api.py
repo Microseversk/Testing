@@ -41,7 +41,19 @@ class TestPalindromicCounterSubs:
 		"abc abc",
 		"@#!",
 		"!@#abc!@#",
-		"abc!@#abc"
+		"abc!@#abc",
+		"()",
+		"[]",
+		"{}",
+		"<>",
+		"()abc()",
+		"[]abc[]",
+		"{}abc{}}",
+		"<>abc<>",
+		"abc()abc",
+		"abc[]abc",
+		"abc{}abc",
+		"abc<>abc"
 	]
 
 	@pytest.mark.parametrize("data", [
@@ -57,8 +69,8 @@ class TestPalindromicCounterSubs:
 	@pytest.mark.parametrize("data",[
 		pytest.param('a', id='left_on_bound'),
 		pytest.param('aa', id='left_gt_bound'),
-		pytest.param('a' * 999, id='left_lt_bound'),
-		pytest.param('a' * 1000, id='left_on_bound'),
+		pytest.param('a' * 999, id='right_lt_bound'),
+		pytest.param('a' * 1000, id='right_on_bound'),
 	])
 	def test_input_length_valid_response_status_200(self,data):
 		assert post_form(data={'input_text':data},path='result').status_code == 200
