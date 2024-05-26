@@ -2,10 +2,7 @@ import unittest
 from unittest import TestCase
 from solution import Solution
 
-
-
 class TestSolution(TestCase):
-
     def setUp(self) -> None:
         self.sol = Solution()
 

@@ -8,8 +8,12 @@
   <body>
     <h1>Введите строку:</h1>
     <form action="/result" method="post">
-      <input type="text" name="input_text" />
-      <input type="submit" value="Отправить" />
+      <input id="input1" type="text" name="input_text1" />
+      <input id="button1" type="submit" value="Результат в json" />
+    </form>
+  <form action="/result_page" method="post" style="margin-top:10px">
+      <input id="input2" type="text" name="input_text2" />
+      <input id="button2" type="submit" value="Результат на странице" />
     </form>
   </body>
 </html>

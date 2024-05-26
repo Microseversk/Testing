@@ -97,4 +97,4 @@ class TestPalindromicCounterSubs:
 
 	def test_form_extra_key_response_correct_answer_count(self):
 
-		assert post_form(data={'input_text': 'aa', 'extra_key': 2}, path='result').json()['count']
+		assert post_form(data={'input_text': 'aaa', 'extra_key': 2}, path='result').json()['count'] == 6
